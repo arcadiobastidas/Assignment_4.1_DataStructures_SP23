@@ -154,12 +154,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Assignment.cpp" />
+    <ClCompile Include="AssignmentList.cpp" />
     <ClCompile Include="Assignment_4._1_DataStructures_SP23.cpp" />
+    <ClCompile Include="Date.cpp" />
     <ClCompile Include="LinkedBag.cpp" />
     <ClCompile Include="Node.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Assignment.h" />
+    <ClInclude Include="AssignmentList.h" />
     <ClInclude Include="BagInterface.h" />
+    <ClInclude Include="Date.h" />
     <ClInclude Include="LinkedBag.h" />
     <ClInclude Include="Node.h" />
   </ItemGroup>
