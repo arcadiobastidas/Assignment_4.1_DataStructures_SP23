@@ -71,6 +71,11 @@ bool Assignment::operator>(const Assignment& other) const {
     return dueDate > other.dueDate;
 }
 
+bool Assignment::operator<(const Assignment& other) const
+{
+    return  dueDate < other.dueDate;
+}
+
 bool Assignment::operator==(const Assignment& other) const {
     return dueDate == other.dueDate;
 }

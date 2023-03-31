@@ -1,6 +1,7 @@
 ﻿#include "AssignmentList.h"
 #include <vector>
 #include <iostream>
+#include <algorithm>
 
 AssignmentList::AssignmentList() {}
 
@@ -28,56 +29,39 @@ void AssignmentList::displayAssignments() const {
         cout << "No assignments in list." << endl;
     } else {
         cout << "Assignments:" << endl;
-        for (const auto& assignment : assignments) {
+        for (const Assignment& assignment : assignments) {
             cout << "- " << assignment.getDescription() << " due on " << assignment.getDueDate() << endl;
         }
     }
 }
 
-vector<Assignment> AssignmentList::getOrderedAssignments() const {
-    vector<Assignment> assignments = myAssig.toVector();
-    int n = assignments.size();
-    bool swapped;
-    do {
-        swapped = false;
-        for (int i = 0; i < n-1; i++) {
-            if (assignments[i].getDueDate() > assignments[i+1].getDueDate()) {
-                swap(assignments[i], assignments[i+1]);
-                swapped = true;
-            }
-        }
-        n--;
-    } while (swapped);
-    return assignments;
-}
+Assignment AssignmentList::getEarliestAssignment(const AssignmentList& obj) const
+{
+    vector<Assignment> temp;
+    Assignment earliestAssignment;
+    
 
-vector<Assignment> AssignmentList::getEarliestAssignments() const {
-    vector<Assignment> assignments = myAssig.toVector();
-    int n = assignments.size();
-    bool swapped;
-    do {
-        swapped = false;
-        for (int i = 0; i < n-1; i++) {
-            if (assignments[i].getDueDate() > assignments[i+1].getDueDate()) {
-                swap(assignments[i], assignments[i+1]);
-                swapped = true;
-            }
-        }
-        n--;
-    } while (swapped);
-    vector<Assignment> earliestAssignments;
-    if (!assignments.empty()) {
-        earliestAssignments.push_back(assignments[0]);
-        for (int i = 1; i < assignments.size(); i++) {
-            if (assignments[i].getDueDate()== earliestAssignments[0].getDueDate()) {
-                earliestAssignments.push_back(assignments[i]);
-            } else {
-                break;
+    for(int i = 0; i < obj.myAssig.getCurrentSize(); i++)
+    {
+        temp.push_back(obj.myAssig.getElement(i));
+    }
+
+    for (int i = 0; i < temp.size() - 1; i++) {
+        for (int j = 0; j < temp.size() - i - 1; j++) {
+            if (temp[j].getDueDate() > temp[j + 1].getDueDate()) {
+                swap(temp[j], temp[j + 1]);
             }
         }
     }
-    return earliestAssignments;
+   
+   earliestAssignment = temp[0];
+    return earliestAssignment;
+
+        
 }
+
+
+
 
 AssignmentList& AssignmentList::operator=(const AssignmentList& other) {
     if (this != &other) {

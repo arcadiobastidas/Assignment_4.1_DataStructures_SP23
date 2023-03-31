@@ -30,6 +30,8 @@ public:
     bool contains(const ItemType& anEntry) const override;
     int getFrequencyOf(const ItemType& anEntry) const override;
     vector<ItemType> toVector() const override;
+    void display() const override;
+    ItemType getElement(int index) const override;
 }; // end LinkedBag
 
 #endif

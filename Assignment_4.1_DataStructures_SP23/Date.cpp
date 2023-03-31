@@ -110,6 +110,11 @@ bool Date::operator>(const Date& other) const {
     return getDate() > other.getDate();
 }
 
+bool Date::operator<(const Date& other) const
+{
+    return getDate() < other.getDate();
+}
+
 bool Date::operator==(const Date& other) const {
     return getDate() == other.getDate();
 }

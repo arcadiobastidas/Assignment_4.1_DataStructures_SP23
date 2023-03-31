@@ -31,6 +31,7 @@ public:
     friend istream& operator>>(istream& in, Date& obj);
 
     bool operator>(const Date& other) const;
+    bool operator<(const Date& other) const;
     bool operator==(const Date& other) const;
     
     

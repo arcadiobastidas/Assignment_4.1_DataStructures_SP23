@@ -55,5 +55,8 @@ public:
        are in this bag.
     @return  A vector containing all the entries in the bag. */
    virtual vector<ItemType> toVector() const = 0;
+
+ virtual void display() const = 0;
+ virtual ItemType getElement(int index) const = 0;
 }; // end BagInterface
 #endif

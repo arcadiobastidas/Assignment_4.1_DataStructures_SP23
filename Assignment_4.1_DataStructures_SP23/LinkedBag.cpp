@@ -188,4 +188,24 @@ Node<ItemType>* LinkedBag<ItemType>::getPointerTo(const ItemType& anEntry) const
    return curPtr;
 } // end getPointerTo
 
+template <class ItemType>
+void LinkedBag<ItemType>::display() const
+{
+   for (int count = 0; count < getCurrentSize(); count++)
+   {
+      if(count < itemCount)
+      {
+         cout << headPtr->getNext()<< " , ";
+      } 
+        
+        
+   } //end for
+   cout << endl;
+} //end display
+template <class ItemType>
+ItemType LinkedBag<ItemType>::getElement(int index) const
+{
+   return headPtr->getItem();
+}
+
 

@@ -19,11 +19,18 @@ public:
     bool addAssignment(const Assignment& assignment);
     bool removeAssignment(const Assignment& assignment);
     void displayAssignments() const;
-
-    vector<Assignment> getOrderedAssignments() const;
-    vector<Assignment> getEarliestAssignments() const;
+    Assignment getEarliestAssignment(const AssignmentList & obj) const;
 
     AssignmentList& operator=(const AssignmentList& other);
+
+    friend ostream& operator<<(ostream& out, const AssignmentList& obj)
+    {
+       return out;
+    }
+    friend istream& operator>>(istream& in, AssignmentList& obj)
+    {
+        return in;
+    }
 };
 
 #endif // ASSIGNMENT_LIST
