@@ -26,11 +26,12 @@ Date::Date(const Date& obj)
 
 Date::~Date()
 {
+   
 }
 
 void Date::setDate(int _month, int _day, int _year)
 {
-    if (_month> 0 && _day> 0 && _year > 0)
+    if ((_month> 0 && _month <= 12 )&&(_day> 0 && _day <=31)&& _year > 0)
     {
         this->month = _month;
         this->day = _day;
@@ -108,7 +109,12 @@ istream& operator>>(istream& in, Date& obj)
 
 
 bool Date::operator==(const Date& other) const {
-    return getDate() == other.getDate();
+    if(getDate()==other.getDate())
+    {
+        return true;
+    }
+
+    return false;
 }
 
 //overload operator >, <, and ==

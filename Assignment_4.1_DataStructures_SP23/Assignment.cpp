@@ -67,6 +67,7 @@ Assignment& Assignment::operator=(const Assignment& other) {
     return *this;
 }
 
+
 bool Assignment::operator>(const Assignment& other) const {
     return dueDate > other.dueDate;
 }
@@ -76,6 +77,8 @@ bool Assignment::operator<(const Assignment& other) const
     return  dueDate < other.dueDate;
 }
 
-bool Assignment::operator==(const Assignment& other) const {
-    return dueDate == other.dueDate;
+ bool Assignment::operator==(const Assignment& other) const {
+  return this->getDescription() == other.getDescription();
 }
+
+

@@ -21,9 +21,11 @@ bool AssignmentList::addAssignment(const Assignment& assignment) {
     return myAssig.add(assignment);
 }
 
+
 bool AssignmentList::removeAssignment(const Assignment& assignment) {
     return myAssig.remove(assignment);
 }
+
 
 
 AssignmentList AssignmentList::getEarliestAssignments() const {
@@ -58,6 +60,8 @@ AssignmentList AssignmentList::getAssignmentInOrderAdded() const {
     }
     return assignmentInOrderAdded;
 }
+
+
 
 AssignmentList& AssignmentList::operator=(const AssignmentList& other) {
     if (this != &other) {

@@ -25,7 +25,7 @@ public:
     Assignment& operator=(const Assignment& other);
     bool operator>(const Assignment& other) const;
     bool operator<(const Assignment& other) const;
-    bool operator==(const Assignment& other) const;
+   bool operator==(const Assignment& other) const;
 
 
     friend ostream& operator<<(ostream& out, const Assignment& obj);
