@@ -208,4 +208,3 @@ ItemType LinkedBag<ItemType>::getElement(int index) const
    return headPtr->getItem();
 }
 
-
